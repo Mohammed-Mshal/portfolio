@@ -12,7 +12,7 @@ const poppinsSans = Poppins({
 
 
 export const metadata: Metadata = {
-    title: "Portfolio",
+    title: "Portfolio | Mohammed Al-Mshal",
     description: "Web Developer",
 };
 
