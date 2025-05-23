@@ -13,12 +13,12 @@ const defaultState = {
         {
             title: 'OVERVIEW',
             link: '/dashboard/cms',
-            icon: '/Overview.svg',
+            icon: '/overview.svg',
             description: 'Check Overview Of Your Portfolio'
         }, {
             title: 'PREVIEW PORTFOLIO',
             link: '/portfolio',
-            icon: '/Screen.svg',
+            icon: '/screen.svg',
             description: 'Check Overview Of Your Portfolio'
         }, {
             title: 'HERO SECTION',

@@ -19,7 +19,7 @@ export default function BoxLink(
   return (
     <div className='box relative flex-1 min-w-[250px] group overflow-hidden  rounded-2xl'>
       <Link href={href} className='absolute top-0 left-0 w-full h-full z-30'></Link>
-      <div className="description  absolute opacity-0 -bottom-full group-hover:bottom-0 group-hover:opacity-100 bg-linear-to-t backdrop-blur-sm z-20 from-black/60 to-indigo-600 h-full transition-all p-4 duration-500 w-full flex items-center justify-center font-bold text-lg">
+      <div className="description  absolute opacity-0 -bottom-full group-hover:bottom-0 group-hover:opacity-100 bg-linear-to-t backdrop-blur-sm z-20 from-black/60 to-indigo-600 h-full transition-all p-4 duration-500 w-full flex items-center justify-center font-bold text-lg text-center">
         {description}
       </div>
       <div className='box-content relative  flex flex-col items-center gap-4 p-6 h-[150px] justify-center bg-white/25 backdrop-blur-2xl'>
