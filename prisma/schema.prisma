@@ -1,0 +1,151 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id          String          @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  email       String          @unique
+  password    String
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+  HeroSection HeroSection?
+  Description Description[]
+  SocialMedia SocialMedia[]
+  Category    CategorySkill[]
+  Skills      Skills[]
+  Projects    Projects[]
+  Tool        Tool[]
+}
+
+model HeroSection {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String   @default("")
+  subtitle    String   @default("")
+  image       String?
+  imageId     String?
+  buttonText  String   @default("")
+  buttonLink  String   @default("")
+  description String   @default("")
+  admin       Admin    @relation(fields: [adminId], references: [id])
+  adminId     String   @unique @db.ObjectId
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Description {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  description String
+  admin       Admin    @relation(fields: [adminId], references: [id])
+  adminId     String   @db.ObjectId
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model SocialMedia {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  type      Social
+  icon      String
+  iconId    String
+  link      String
+  admin     Admin    @relation(fields: [adminId], references: [id])
+  adminId   String   @db.ObjectId
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model CategorySkill {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  title     String
+  listSkill Skills[]
+  Admin     Admin?   @relation(fields: [adminId], references: [id])
+  adminId   String?  @db.ObjectId
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Skills {
+  id              String         @id @default(auto()) @map("_id") @db.ObjectId
+  title           String
+  CategorySkill   CategorySkill? @relation(fields: [categorySkillId], references: [id])
+  categorySkillId String?        @db.ObjectId
+  Admin           Admin?         @relation(fields: [adminId], references: [id])
+  adminId         String?        @db.ObjectId
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+}
+
+model Projects {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  image       String
+  imageId     String
+  description String
+
+  links     ProjectLink[]
+  tools     Tool[]
+  admin     Admin         @relation(fields: [adminId], references: [id])
+  adminId   String        @db.ObjectId
+  createAt  DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+}
+
+model ProjectLink {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  title      String
+  icon       String
+  iconId     String
+  link       String
+  Projects   Projects @relation(fields: [projectsId], references: [id])
+  projectsId String   @db.ObjectId
+  createAt   DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Tool {
+  id         String    @id @default(auto()) @map("_id") @db.ObjectId
+  title      String
+  Admin      Admin?    @relation(fields: [adminId], references: [id])
+  adminId    String?   @db.ObjectId
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  Projects   Projects? @relation(fields: [projectsId], references: [id])
+  projectsId String?   @db.ObjectId
+}
+
+model Experience {
+  id           String         @id @default(auto()) @map("_id") @db.ObjectId
+  companyName  String
+  dateFrom     DateTime
+  dateTo       DateTime
+  untilNow     Boolean
+  position     String
+  workplace    String
+  description  String
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  technologies Technologies[]
+}
+
+model Technologies {
+  id           String      @id @default(auto()) @map("_id") @db.ObjectId
+  title        String
+  Experience   Experience? @relation(fields: [experienceId], references: [id])
+  experienceId String?     @db.ObjectId
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+}
+
+enum Social {
+  WHATSAPP
+  FACEBOOK
+  YOUTUBE
+  INSTAGRAM
+  CALL
+  EMAIL
+}

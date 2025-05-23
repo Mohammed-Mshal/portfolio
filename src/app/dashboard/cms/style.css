@@ -1,0 +1,13 @@
+.content {
+  background-color: #3f3f3f4f;
+}
+.sidebar {
+  @media (max-width: 1535px) {
+    left: -250px;
+  }
+  &:has(.showSidebar) {
+    @media (max-width: 1535px) {
+      left: 0;
+    }
+  }
+}

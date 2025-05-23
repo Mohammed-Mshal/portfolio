@@ -1,0 +1,10 @@
+body:has(.popup.show) {
+  overflow-y: hidden;
+  .main-nav {
+    z-index: -1;
+  }
+  .popup.show {
+    /* overflow-y: scroll; */
+    z-index: 1000;
+  }
+}

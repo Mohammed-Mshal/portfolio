@@ -1,0 +1,5 @@
+export type PopupType = 'EditPopup'
+export type PopupSocialType = 'EditPopup' | 'AddPopup'|'DeleteButton'
+export type PopupSkillsType = 'EditPopup' | 'AddPopup'|'DeleteButton'
+export type PopupExperienceType = 'EditPopup' | 'AddPopup'|'DeleteButton'
+export type PopupTechnologyType = 'EditPopup' | 'AddPopup'|'DeleteButton'

@@ -1,0 +1,14 @@
+.popup-description:has(.show-popup) {
+  opacity: 1;
+  pointer-events: all;
+  .container-popup{
+    scale: 1;
+  }
+}
+.popup-description:has(.hidden-popup) {
+    opacity: 0;
+    pointer-events: none;
+    .container-popup{
+      scale: .7;
+    }
+}
