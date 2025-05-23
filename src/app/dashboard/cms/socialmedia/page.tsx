@@ -1,5 +1,4 @@
-
-import CreateProject from '@/actions/CreateProject'
+import CreateSocial from '@/actions/CreateSocial'
 import Popup from '@/app/components/PopupSocial/PopupSocial'
 import DeleteSocialMedia from '@/data/SocialMedia/DeleteSocialMedia'
 import EditSocialMedia from '@/data/SocialMedia/EditSocialMedia'
@@ -28,7 +27,7 @@ export default async function SocialMedia() {
                             <h3 className="title lg:text-2xl md:text-xl text-lg font-bold">
                                 List Social Links
                             </h3>
-                            <Popup typePopup='AddPopup' headerText={'Create New Social Link'} buttonIcon={<FiPlusCircle className='text-4xl hover:text-indigo-600 transition-all duration-300' />} styleButton='bg-indigo-600 py-1 px-8 hover:bg-indigo-700 border-2 border-indigo-600' action={CreateProject} buttonText='Add Link' />
+                            <Popup typePopup='AddPopup' headerText={'Create New Social Link'} buttonIcon={<FiPlusCircle className='text-4xl hover:text-indigo-600 transition-all duration-300' />} styleButton='bg-indigo-600 py-1 px-8 hover:bg-indigo-700 border-2 border-indigo-600' action={CreateSocial} buttonText='Add Link' />
                         </div>
                         <div className="body-descriptions flex flex-col gap-4">
                             <table className='border-collapse border border-white/10'>
