@@ -2,9 +2,11 @@
 import { useScroll, useSpring } from 'motion/react'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import IconLogo from 'static/iconLogo.svg'
 import { motion } from "motion/react"
+import { FiMenu } from 'react-icons/fi'
+import { CgClose } from 'react-icons/cg'
 const listMenu: { link: string, text: string }[] = [
     {
         link: '#about',
@@ -26,6 +28,7 @@ const listMenu: { link: string, text: string }[] = [
 export default function Navbar() {
     const { scrollYProgress } = useScroll()
     const scaleX = useSpring(scrollYProgress)
+    const [menu, setMenu] = useState(false)
     return (
         <motion.div
             initial={{
@@ -38,12 +41,12 @@ export default function Navbar() {
                 duration: .3,
                 ease: 'easeInOut'
             }}
-            className={`sticky top-0 left-0 h-screen w-fit z-30`}>
-            <div className="flex flex-col gap-8 py-4  border-r border-[#000] border-opacity-20 bg-black h-full relative z-30 md:max-w-16 max-w-10">
-                <Link href={'/'} className="logo w-full h-16">
-                    <Image src={IconLogo} alt='Logo' height={100} width={100} className='max-h-full object-contain' />
+            className={`sticky top-0 left-0 md:h-screen h-fit md:w-fit w-full  z-30`}>
+            <div className="flex md:flex-col justify-between gap-8 md:py-4 py-2 px-4 md:px-0  border-r border-[#000] border-opacity-20 bg-black h-full relative z-30 md:max-w-16 w-full max-w-full">
+                <Link href={'/'} className="logo md:w-full h-14 w-14 flex  z-10">
+                    <Image src={IconLogo} alt='Logo' height={100} width={100} className='max-h-full min-h-full min-w-full h-full w-fit object-contain' />
                 </Link>
-                <ul className='flex flex-col items-center '>
+                <ul className={`flex flex-col list-nav flex-1  backdrop-blur-lg ${menu &&' show '}`}>
                     {
                         listMenu.map((item, index) => {
                             return <motion.li
@@ -66,8 +69,12 @@ export default function Navbar() {
                         })
                     }
                 </ul>
+                <button className='text-white text-2xl md:hidden flex items-center z-10' onClick={() => setMenu((prevState) => !prevState)}>
+                    <FiMenu className={`${menu && 'hidden'}`} />
+                    <CgClose className={`${!menu && 'hidden'}`} />
+                </button>
             </div>
-            <div className="progress-bar-wrap flex items-center absolute -bottom-3 left-0 right-0 h-5 z-20 lg:hidden">
+            <div className="progress-bar-wrap flex items-center absolute -bottom-3 left-0 right-0 h-5 z-20 md:hidden">
                 <motion.div style={{ scaleX }} className="progress-bar"></motion.div>
             </div>
         </motion.div>

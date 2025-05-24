@@ -12,14 +12,14 @@ export default async function Home() {
   const resGetProjects = await GetProjects()
   const resExperiences = await GetExperience()
   return (
-    <div className="flex flex-row justify-stretch min-h-dvh relative">
+    <div className="flex md:flex-row flex-col justify-stretch min-h-dvh relative">
       <Navbar />
       <div className="main-page relative flex flex-col flex-1 overflow-hidden">
         <MainNav />
         <Hero />
         <About />
         <Projects projects={resGetProjects.data?.projects || []} />
-        <ExperienceSection listExperience={resExperiences?.data?.experiences || [] } />
+        <ExperienceSection listExperience={resExperiences?.data?.experiences || []} />
         <Contact />
       </div>
     </div>

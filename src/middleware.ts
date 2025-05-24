@@ -7,6 +7,9 @@ export async function middleware(request: NextRequest) {
     const protectedRoute = ['/dashboard/cms']
     const currentPath = request.nextUrl.pathname
     const isProtectedRoute = protectedRoute.includes(currentPath)
+    if (currentPath === '/') {
+        return NextResponse.redirect(new URL('/portfolio', request.nextUrl))
+    }
     if (isProtectedRoute && !currentPath.startsWith(authRoutes)) {
         const cookie = (await cookies()).get('session')?.value
         const session = await decrypt(cookie)
@@ -21,7 +24,7 @@ export async function middleware(request: NextRequest) {
             return NextResponse.redirect(new URL('/dashboard/cms', request.nextUrl))
         }
     }
-    if (currentPath === '/dashboard'||currentPath === '/') {
+    if (currentPath === '/dashboard') {
         const cookie = (await cookies()).get('session')?.value
         const session = await decrypt(cookie)
         if (session?.userID) {

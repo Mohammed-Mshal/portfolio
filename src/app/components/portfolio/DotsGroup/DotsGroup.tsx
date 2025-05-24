@@ -76,7 +76,7 @@ export default function DotsGroup() {
 
 
     return (
-        <div className="dots-group absolute top-1/2 sm:end-0 -translate-y-1/2 h-full w-1/2 grid grid-cols-[repeat(25,1fr)] -z-10" >
+        <div className="dots-group absolute top-1/2 sm:end-0 -translate-y-1/2 h-full w-1/2 hidden lg:grid grid-cols-[repeat(25,1fr)] -z-10" >
             {
                 dots.flat().map((dot, i) => {
                     return (

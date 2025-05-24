@@ -18,15 +18,15 @@ export default function Contact() {
         }
     }
     return (
-        <div className='max-w-7xl w-full mx-auto lg:px-20 py-14 md:px-10 px-6 my-10 relative z-10 overflow-hidden' id='contact'>
-            <div className="container xl:my-12 mt-8 flex flex-col items-center text-center gap-8  mx-auto">
+        <div className='max-w-7xl w-full mx-auto lg:px-20 md:py-14 py-8 md:px-10 px-6 md:my-10 my-8 relative z-10 overflow-hidden' id='contact'>
+            <div className="container xl:my-12 mt-8 flex flex-col items-center text-center lg:gap-8 gap-4  mx-auto">
                 <div className={`overflow-hidden sm:pb-4 pb-1 relative w-fit z-10 bg-[#111]`}>
                     <motion.h1
                         variants={variants}
                         initial={'initial'}
                         whileInView={'animate'}
                         transition={transition}
-                        className='title text-3xl sm:text-6xl md:text-8xl font-black'>
+                        className='title text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black'>
                         Contact<span className='text-indigo-700'>.</span>
                     </motion.h1>
                     <motion.div className='absolute top-0 right-0 h-full bg-indigo-700 z-10'
@@ -52,9 +52,7 @@ export default function Contact() {
                         transition={transition}
                         className='title text-lg'>
                         Shoot me an email if you want to connect! You can also find me on
-                        <Link href="#" className='text-indigo-600 hover:underline'> Linkedin </Link>
-                        or
-                        <Link href="#" className='text-indigo-600 hover:underline'> Twitter </Link>
+                        <Link href="https://www.linkedin.com/in/mohammed-mshal-7405b3234" className='text-indigo-600 hover:underline'> Linkedin </Link>
                         if that`s more your speed.
                     </motion.p>
                     <motion.div className='absolute top-0 right-0 h-full bg-indigo-700 z-10'
@@ -72,14 +70,14 @@ export default function Contact() {
 
                     </motion.div>
                 </div>
-                <div className={`overflow-hidden sm:pb-4 pb-1 relative w-fit z-10 bg-[#111]`}>
+                <div className={`overflow-hidden sm:pb-4 pb-3 relative w-fit z-10 bg-[#111]`}>
                     <motion.div
                         variants={variants}
                         initial={'initial'}
                         whileInView={'animate'}
                         transition={transition}
                         className='title text-lg'>
-                        <Link href={'mailto:#'} className='hover:text-indigo-600 text-4xl font-bold transition-all duration-500'>
+                        <Link href={'mailto:mohammedmshal02@gmail.com'} className='hover:text-indigo-600 lg:text-4xl md:text-3xl sm:text-2xl text-xl font-bold transition-all duration-500'>
                             mohammedmshal02@gmail.com
                         </Link>
 

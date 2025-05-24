@@ -19,8 +19,8 @@ export default function HeroContainer({ HeroSection }: { HeroSection: HeroSectio
         }
     }
     return (
-        <div className="container xl:my-12 mt-8 flex flex-col items-start gap-2  mx-auto">
-            <div className='overflow-hidden sm:pb-4 pb-1 relative'>
+        <div className="container xl:my-12  flex flex-col items-start gap-2  mx-auto">
+            <div className='overflow-hidden sm:pb-4 pb-3 relative'>
                 <motion.h1
                     variants={variants}
                     initial={'initial'}

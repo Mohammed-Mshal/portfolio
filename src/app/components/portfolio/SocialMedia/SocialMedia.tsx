@@ -23,8 +23,8 @@ export default function SocialMedia({ listSocial }: { listSocial: SocialMedia[] 
                             delay: index / 10 + .2,
                             ease: 'easeInOut'
                         }}>
-                        <Link href={item.type === 'CALL' ? `tel:${item.link}` : item.type === 'EMAIL' ? `mailto:${item.link}` : item.type === 'WHATSAPP' ? `https://wa.me/${item.link}` : item.link} className='text-white text-opacity-60 hover:text-opacity-100 hover:text-indigo-700 transition-all'>
-                            <Image src={item.icon} alt='Icon' height={40} width={40} />
+                        <Link href={item.type === 'CALL' ? `tel:${item.link}` : item.type === 'EMAIL' ? `mailto:${item.link}` : item.type === 'WHATSAPP' ? `https://wa.me/${item.link}` : item.link} className='text-white text-opacity-60 hover:text-opacity-100 hover:text-indigo-700 transition-all h-8 w-8 flex'>
+                            <Image src={item.icon} alt='Icon' height={40} width={40} className='h-full w-full object-contain' />
                         </Link>
                     </motion.li>
                 })

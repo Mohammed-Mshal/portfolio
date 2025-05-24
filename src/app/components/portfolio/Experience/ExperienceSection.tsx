@@ -25,7 +25,7 @@ export default function ExperienceSection({
         }
     }
     return (
-        <div className={`max-w-7xl w-full mx-auto lg:px-20 py-14 md:px-10 px-6 my-10 relative overflow-hidden`} id='experience'>
+        <div className={`max-w-7xl w-full mx-auto lg:px-20 md:py-14 py-8 md:px-10 px-6 md:my-10 my-8 relative overflow-hidden`} id='experience'>
             <div className="container xl:my-12 mt-8 flex flex-col items-start gap-8  mx-auto">
                 <TitleSection direction='left' textContent='Experience' />
                 <div className='w-full gap-2'>

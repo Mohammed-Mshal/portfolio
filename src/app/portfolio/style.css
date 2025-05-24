@@ -152,8 +152,36 @@ body {
   scroll-behavior: smooth;
 }
 
-.itemNav {
-  writing-mode: vertical-lr;
-  -webkit-writing-mode: vertical-lr;
-  -ms-writing-mode: vertical-lr;
+@media (width>=768px) {
+  .itemNav {
+    writing-mode: vertical-lr;
+    -webkit-writing-mode: vertical-lr;
+    -ms-writing-mode: vertical-lr;
+  }
+}
+
+@media (width<768px) {
+
+  .list-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    gap: 24px;
+    background: #00000099;
+    transition: .5s all ease-in-out;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .list-nav.show {
+    opacity: 1;
+    pointer-events: all;
+  }
+  html:has(.list-nav.show){
+    overflow-y: hidden;
+  }
 }

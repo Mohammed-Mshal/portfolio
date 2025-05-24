@@ -14,7 +14,7 @@ export default async function About() {
     const categories = await GetCategorySkills()
     const listSocial: SocialMedia[] | undefined = socialMedia.data?.socialMedia
     return (
-        <div className='max-w-7xl w-full mx-auto lg:px-20 py-14 md:px-10 px-6 my-10 relative z-10 overflow-hidden' id='about'>
+        <div className='max-w-7xl w-full mx-auto lg:px-20 md:py-14 py-8 md:px-10 px-6 md:my-10 my-8 relative z-10 overflow-hidden' id='about'>
             <div className="container xl:my-12 mt-8 flex flex-col items-start gap-8  mx-auto">
                 <TitleSection direction='left' textContent='About' />
                 <div className='flex w-full gap-8 lg:flex-row flex-col'>
