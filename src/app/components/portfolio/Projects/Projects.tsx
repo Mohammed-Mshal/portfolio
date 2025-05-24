@@ -118,7 +118,7 @@ export default function Projects({ projects }: {
                                 return <span key={e.id}>{e.title}{i !== data.listTech.length - 1 && ' - '}</span>
                             })}
                         </div>
-                        <div className='description flex flex-col gap-4 py-4'>
+                        <div className='description flex flex-col gap-4 py-4 text-justify'>
                             {data.descriptions}
                         </div>
                         <h4 className='md:text-2xl text-xl font-bold'>

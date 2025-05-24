@@ -24,7 +24,7 @@ export default function AboutSummery({ listAbout, listSocial }: { listAbout: Des
         <div className='flex-1'>
             {listAbout &&
                 listAbout.map((summery, index) => {
-                    return <div key={index} className='overflow-hidden sm:pb-4 pb-1 relative w-fit z-10 lg:text-xl text-base lg:mb-6 mb-4 font-extralight'>
+                    return <div key={index} className='overflow-hidden sm:pb-4 pb-1 relative w-fit z-10 lg:text-xl text-base lg:mb-6 mb-4 font-extralight text-justify'>
                         <motion.p
                             variants={variants}
                             initial={'initial'}

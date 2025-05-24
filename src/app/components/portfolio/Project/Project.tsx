@@ -70,7 +70,7 @@ export default function Project({ id, setShowingData, setPopupDetails, descripti
                     >
                     </motion.div>
                 </div>
-                <div className='overflow-hidden sm:pb-3 pb-1 relative w-fit'>
+                <div className='overflow-hidden sm:pb-3 pb-1 relative w-fit text-justify'>
                     <motion.div
                         variants={variants}
                         initial={'initial'}

@@ -26,7 +26,7 @@ export default function HeroContainer({ HeroSection }: { HeroSection: HeroSectio
                     initial={'initial'}
                     whileInView={'animate'}
                     transition={transition}
-                    className='title text-2xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black'>
+                    className='title text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black'>
                     {HeroSection?.title}<span className='text-indigo-700'>.</span>
                 </motion.h1>
                 <motion.div className='absolute top-0 right-0 h-full bg-indigo-700 z-10'
@@ -69,7 +69,7 @@ export default function HeroContainer({ HeroSection }: { HeroSection: HeroSectio
                     initial={'initial'}
                     whileInView={'animate'}
                     transition={transition}
-                    className="text max-w-[650px] text-pretty lg:text-lg text-base text-normalText font-extralight">
+                    className="text max-w-[650px] text-pretty lg:text-lg text-base text-normalText font-extralight text-justify">
                     {
                         HeroSection?.description
                     }

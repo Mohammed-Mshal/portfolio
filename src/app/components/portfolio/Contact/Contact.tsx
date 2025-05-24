@@ -77,7 +77,7 @@ export default function Contact() {
                         whileInView={'animate'}
                         transition={transition}
                         className='title text-lg'>
-                        <Link href={'mailto:mohammedmshal02@gmail.com'} className='hover:text-indigo-600 lg:text-4xl md:text-3xl sm:text-2xl text-xl font-bold transition-all duration-500'>
+                        <Link href={'mailto:mohammedmshal02@gmail.com'} className='hover:text-indigo-600 lg:text-4xl md:text-3xl sm:text-2xl text-lg font-bold transition-all duration-500'>
                             mohammedmshal02@gmail.com
                         </Link>
 

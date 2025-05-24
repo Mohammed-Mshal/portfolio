@@ -158,7 +158,7 @@ export default function ExperienceSection({
                                             initial={'initial'}
                                             whileInView={'animate'}
                                             transition={transition}
-                                            className='text-white text-opacity-80 md:text-lg text-base'>
+                                            className='text-white text-opacity-80 md:text-lg text-base text-justify'>
                                             {experience.description}
                                         </motion.div>
                                         <motion.div className='absolute top-0 right-0 h-full bg-indigo-700 z-10'
