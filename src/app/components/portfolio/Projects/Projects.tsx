@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/autoplay';
+import { CgClose } from 'react-icons/cg'
 
 export default function Projects({ projects }: {
     projects: ({
@@ -66,7 +67,7 @@ export default function Projects({ projects }: {
                 title: dataPopup.title,
                 projectLinks: dataPopup.links
             })
-        } else{
+        } else {
             setData({
                 id: '',
                 image: '',
@@ -74,7 +75,7 @@ export default function Projects({ projects }: {
                 descriptions: '',
                 title: '',
                 projectLinks: []
-            })  
+            })
         }
     }, [showingData])
     return (
@@ -112,8 +113,11 @@ export default function Projects({ projects }: {
                 }
             }}>
                 <div
-                    className={`container-details flex flex-col gap-4 bg-[#1f1f1f] z-30 h-fit lg:w-[calc(100dvw-160px)] w-[calc(100dvw-50px)] mx-auto my-6  md:max-w-screen-sm transition-all duration-500 ${popupDetails ? 'translate-y-0 scale-100' : 'translate-y-10 scale-50'} rounded-xl overflow-hidden bg-[#313131]`} >
-                    <div className="containerImage h-auto w-full max-h-[500px] overflow-hidden ">
+                    className={`container-details mb-10 flex flex-col gap-4 bg-[#1f1f1f] z-30 h-fit lg:w-[calc(100dvw-160px)] w-[calc(100dvw-50px)] mx-auto my-6  md:max-w-screen-sm transition-all duration-500 ${popupDetails ? 'translate-y-0 scale-100' : 'translate-y-10 scale-50'} rounded-xl overflow-hidden bg-[#313131] relative`} >
+                    <button className='absolute top-0 right-0 p-2 z-20 cursor-pointer hover:bg-white/10 rounded-full transition-all duration-300' onClick={() => setPopupDetails(false)}>
+                        <CgClose className='text-white text-2xl hover:text-red-500 transition-all duration-300' />
+                    </button>
+                    <div className="containerImage h-auto w-full  max-h-[500px] overflow-hidden">
                         {data.image.length > 0 &&
                             <Image src={data.image} alt={data.title} className='h-full w-full object-cover' width={500} height={500} />
                         }
