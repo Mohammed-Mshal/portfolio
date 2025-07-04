@@ -66,6 +66,15 @@ export default function Projects({ projects }: {
                 title: dataPopup.title,
                 projectLinks: dataPopup.links
             })
+        } else{
+            setData({
+                id: '',
+                image: '',
+                listTech: [],
+                descriptions: '',
+                title: '',
+                projectLinks: []
+            })  
         }
     }, [showingData])
     return (
@@ -97,23 +106,23 @@ export default function Projects({ projects }: {
                     }
                 </Swiper>
             </div>
-            <div className={`popup fixed top-0 right-0 pt-20 w-[calc(100dvw-20px)] bg-black/10 overflow-y-scroll backdrop-blur-xl h-screen flex  justify-center items-start z-20 transition-all duration-500 ${popupDetails ? 'opacity-100 pointer-events-auto show' : 'opacity-0 pointer-events-none'}`} onClick={(e) => {
+            <div className={`popup fixed top-0 right-0 left-00 pt-20 w-full bg-black/10 overflow-y-scroll backdrop-blur-xl h-screen flex  justify-center items-start z-20 transition-all duration-500 ${popupDetails ? 'opacity-100 pointer-events-auto show' : 'opacity-0 pointer-events-none'}`} onClick={(e) => {
                 if (e.target === e.currentTarget) {
                     setPopupDetails(false);
                 }
             }}>
                 <div
-                    className={`container-details flex flex-col gap-4 bg-[#1f1f1f] z-30 h-fit w-[calc(100dvw-160px)] mx-auto my-6  md:max-w-screen-sm transition-all duration-500 ${popupDetails ? 'translate-y-0 scale-100' : 'translate-y-10 scale-50'} rounded-xl overflow-hidden bg-[#313131]`} >
-                    <div className="containerImage h-auto w-full ">
+                    className={`container-details flex flex-col gap-4 bg-[#1f1f1f] z-30 h-fit lg:w-[calc(100dvw-160px)] w-[calc(100dvw-50px)] mx-auto my-6  md:max-w-screen-sm transition-all duration-500 ${popupDetails ? 'translate-y-0 scale-100' : 'translate-y-10 scale-50'} rounded-xl overflow-hidden bg-[#313131]`} >
+                    <div className="containerImage h-auto w-full max-h-[500px] overflow-hidden ">
                         {data.image.length > 0 &&
                             <Image src={data.image} alt={data.title} className='h-full w-full object-cover' width={500} height={500} />
                         }
                     </div>
                     <div className="bodyPopup p-4 flex flex-col gap-2">
-                        <h2 className='lg:text-4xl md:text-3xl text-2xl'>
+                        <h2 className='lg:text-4xl md:text-3xl sm:text-2xl text-xl'>
                             {data.title}
                         </h2>
-                        <div className="technologies text-indigo-600 font-semibold text-lg">
+                        <div className="technologies text-indigo-600 font-semibold md:text-lg text-base">
                             {data.listTech.map((e, i) => {
                                 return <span key={e.id}>{e.title}{i !== data.listTech.length - 1 && ' - '}</span>
                             })}
@@ -121,11 +130,11 @@ export default function Projects({ projects }: {
                         <div className='description flex flex-col gap-4 py-4 text-justify'>
                             {data.descriptions}
                         </div>
-                        <h4 className='md:text-2xl text-xl font-bold'>
+                        <h4 className='md:text-2xl sm:text-xl text-lg font-bold'>
                             Project Links<span className='text-4xl text-indigo-700'>.</span>
                         </h4>
                         <div className="project-links">
-                            <div className='flex gap-4 items-center flex-wrap text-indigo-700 font-bold lg:text-lg text-base '>
+                            <div className='flex gap-4 items-center flex-wrap text-indigo-700 font-bold md:text-lg text-base '>
                                 {
                                     data.projectLinks && data.projectLinks.map((link) => {
                                         return <a href={link.link} className='flex items-center gap-2' key={link.id}>
